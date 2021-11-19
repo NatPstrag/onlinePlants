@@ -104,8 +104,10 @@ try{
 });
 
 //Delete product
-app.delete("/api/v1/products/:id", (req, res) =>{
+app.delete("/api/v1/products/:id", async (req, res) =>{
 try{
+const results =db.query("DELETE FROM products where id = $1", [req.params.id]);
+
     res.status(204).json({
         status: "success"
     });
