@@ -59,7 +59,12 @@ app.put("/api/v1/products/:id" , (req, res) => {
     });
 });
 
-
+//Delete product
+app.delete("/api/v1/products/:id", (req, res) =>{
+    res.status(204).json({
+        status: "success"
+    });
+});
 
 
 const port = process.env.PORT || 3001;
