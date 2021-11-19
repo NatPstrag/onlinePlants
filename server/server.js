@@ -1,22 +1,33 @@
 require("dotenv").config();
 const express = require("express");
+const db = require("./db");
+
 const morgan = require("morgan");
-const { nextTick } = require("process");
+
 
 const app = express();
 
 
 app.use(express.json())
+
 //get all products
-app.get("/api/v1/products", (req, res) => {
-    console.log("route handler ran")
+app.get("/api/v1/products", async (req, res) => {
+
+    try{ 
+        const results = await db.query("select * from products")
+
+        console.log(results)
     res.status(200).json({
         status: "success",
+        results: results.rows.length,
         data:{
-            product: ["maranta","monstera","mimoza"]
+            products: results.rows
         },
-        
     })
+
+    }catch (err){
+            console.log(err);
+    }
 });
 
 
