@@ -32,15 +32,29 @@ app.get("/api/v1/products", async (req, res) => {
 
 
 //get a product
-app.get("/api/v1/products/:id", (req, res) =>{
-    console.log(req.params)
+app.get("/api/v1/products/:id", async (req, res) =>{
+    console.log(req.params.id);
+
+        try{
+                const results = await db.query
+                ("select * from products where id = $1", 
+                [req.params,id]);
+
+   
 
     res.status(200).json({
         status: "success",
         data: {
-            product: "maranta"
+            product: results.rows[0]
         }
     })
+
+    }
+    catch (err) {
+        console.log(err)
+    }
+
+  
 })
 
 //Create a product
