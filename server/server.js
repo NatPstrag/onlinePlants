@@ -3,14 +3,30 @@ const express = require("express");
 
 const app = express();
 
+
+//get all products
 app.get("/getProducts", (req, res) => {
-    res.json({
+    res.status(200).json({
         status: "success",
-        product: "maranta"
+        data:{
+            product: ["maranta","monstera","mimoza"]
+        },
+        
     })
 });
-//http://localhost:3001/getProducts
 
+
+//get a product
+app.get("/api/v1/products/:productID", (req, res) =>{
+    console.log(req.params)
+})
+
+//Create a product
+
+app.post("/api/v1/products", (req, res) =>
+{
+    console.log(req)
+});
 
 
 const port = process.env.PORT || 3001;
