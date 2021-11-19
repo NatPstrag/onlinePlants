@@ -20,7 +20,7 @@ app.get("/getProducts", (req, res) => {
 app.get("/api/v1/products/:productID", (req, res) =>{
     console.log(req.params)
 })
-
+console.log("test")
 //Create a product
 
 app.post("/api/v1/products", (req, res) =>
