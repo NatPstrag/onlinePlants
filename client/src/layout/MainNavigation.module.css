@@ -1,18 +1,32 @@
+
+body{
+   background-image: url(../img/back.png), url(../img/gradient.png);
+   background-repeat: no-repeat, no-repeat;
+   width: 1000px;
+   height: 1000px;
+    background-color: #637660;
+  font-family: "Sofia", sans-serif;
+  font-size: 30px;
+  color: antiquewhite;
+ 
+}
 .header{
-    width: 100%;
-    height: 5rem;
+    width: 175%;
+   height: 8rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-image: url(https://c4.wallpaperflare.com/wallpaper/330/1004/860/beautiful-green-leaves-monstera-hd-wallpaper-preview.jpg);
+    background-image: url(../img/back.png);
     padding: 0 10%;
 
 }
 
+
 .logo{
     font-size: 2rem;
-    color: aliceblue;
+    color:antiquewhite;
     font-weight: bold;
+    font-family: 'Annie Use Your Telescope';font-size: 22px;
 
 }
 
@@ -30,13 +44,13 @@
 .header a{
     text-decoration: none;
     font-size: 1.5rem;
-    color: aquamarine;
+    color:antiquewhite
 }
 
 .header a:hover,
 .header a:active,
 .header a.active {
-    color: aquamarine;
+    color:antiquewhite
 }
 
 .badge {
