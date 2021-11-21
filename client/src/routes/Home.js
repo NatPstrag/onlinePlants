@@ -1,5 +1,5 @@
 import React from "react";
-import AddProduct from "../components/AddProduct";
+import ProductItem from "../components/ProductItem";
 
 
 
@@ -8,6 +8,7 @@ const Home = () => {
     return (
         <div>
           Home
+          <ProductItem />
       </div>
     )
 }
