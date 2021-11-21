@@ -11,13 +11,13 @@ body{
  
 }
 .header{
-    width: 175%;
-   height: 8rem;
+    width: 160%;
+   height: 10rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-image: url(../img/back.png);
-    padding: 0 10%;
+    padding: 0 0%;
 
 }
 
@@ -27,31 +27,39 @@ body{
     color:antiquewhite;
     font-weight: bold;
     font-family: 'Annie Use Your Telescope';font-size: 22px;
+    width: 150rem;
 
 }
 
 .header ul {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 5rem;
     display: flex;
     align-items: baseline;
+    
 }
 .header li {
-    margin-left: 3rem;
+    margin-left: 0rem;
+   padding-right: 2rem;
+    
 }
 
 .header a{
     text-decoration: none;
     font-size: 1.5rem;
-    color:antiquewhite
+    color:antiquewhite;
+    padding: 2rem;
+    padding-top: 1%;
+    padding-right: 7%;
+   
 }
 
 .header a:hover,
 .header a:active,
 .header a.active {
-    color:antiquewhite
-}
+    color:cadetblue
+    }
 
 .badge {
     background-color: blue;
@@ -61,3 +69,4 @@ body{
     margin-left: 0.5rem;
 
 }
+

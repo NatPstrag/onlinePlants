@@ -1,10 +1,13 @@
 import React from "react";
 import AddProduct from "../components/AddProduct";
+import ProductList from "../components/ProductList";
 
 const Admin = () => {
     return (
-        <div>deleting, adding and updating
+        <div>
             <AddProduct/>
+            <ProductList />
+          
         </div>
     )
 }
