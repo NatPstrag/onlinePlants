@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const db = require("./db");
 
 const morgan = require("morgan");
@@ -7,7 +8,7 @@ const morgan = require("morgan");
 
 const app = express();
 
-
+app.use(cors());
 app.use(express.json())
 
 //get all products
@@ -16,7 +17,7 @@ app.get("/api/v1/products", async (req, res) => {
     try{ 
         const results = await db.query("select * from products")
 
-        console.log(results)
+        
     res.status(200).json({
         status: "success",
         results: results.rows.length,
@@ -121,7 +122,7 @@ const results =db.query("DELETE FROM products where id = $1", [req.params.id]);
 });
 
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3002;
 app.listen(port, () => {
     console.log(`server is up and listening on port ${port}`);
 });

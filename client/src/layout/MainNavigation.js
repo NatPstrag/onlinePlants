@@ -17,7 +17,7 @@ const MainNavigation = () => {
                         <Link to='/products/:id'>product detail</Link>
                         <Link to='/products/:id/update'>update page</Link>
                         <Link to='/cart'>Cart</Link>
-                        <Link to='/admin'>update page</Link>
+                        <Link to='/products'>update page</Link>
                   
                 </ul>
             </nav>
