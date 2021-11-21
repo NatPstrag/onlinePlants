@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Routes, Route, BrowserRouter} from 'react-router-dom'
+import { ProductsContextProvider} from "./context/ProductContext";
 import MainNavigation from './layout/MainNavigation';
 import Admin from './routes/Admin';
 import Cart from './routes/Cart';
@@ -9,9 +10,15 @@ import ProductDetailPage from './routes/ProductDetailPage';
 import UpdatePage from './routes/UpdatePage';
 
 
+
+
+
 const App = () => {
 
-    return <div>
+    return(  
+
+    <ProductsContextProvider>
+<div>
         <BrowserRouter>
           <MainNavigation />
             <Routes>
@@ -24,6 +31,11 @@ const App = () => {
         </BrowserRouter>
    
     </div>
+   
+    </ProductsContextProvider>
+    
+    
+    )
     
 }
 export default App;
