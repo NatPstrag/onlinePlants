@@ -5,7 +5,7 @@ import ProductList from "../components/ProductList";
 const Admin = () => {
     return (
         <div>
-            <AddProduct/>
+            <AddProduct />
             <ProductList />
           
         </div>

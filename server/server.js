@@ -15,7 +15,7 @@ app.use(express.json())
 app.get("/api/v1/products", async (req, res) => {
 
     try{ 
-        const results = await db.query("select * from products")
+        const results = await db.query("select * from products");
 
         
     res.status(200).json({
@@ -122,7 +122,7 @@ const results =db.query("DELETE FROM products where id = $1", [req.params.id]);
 });
 
 
-const port = process.env.PORT || 3002;
+const port = process.env.PORT || 3001;
 app.listen(port, () => {
     console.log(`server is up and listening on port ${port}`);
 });

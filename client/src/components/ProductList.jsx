@@ -1,20 +1,23 @@
-import React, {useContext, useEffect} from "react";
+import React, { useContext, useEffect} from "react";
 import ProductFinder from "../apis/ProductFinder";
 import { ProductsContext } from "../context/ProductContext";
 
 
+
 const ProductList = (props) => {
-  const{products, setProducts} = useContext(ProductsContext)
+  const {products, setProducts} = useContext(ProductsContext)
  useEffect(() => {
-    const fetchData = async () => {
+const fetchData = async () => {
       try{
-          const response = await ProductFinder.get("/")
-    setProducts(response.data.data.product)
+          const response = await ProductFinder.get("/");
+          setProducts(response.data.data.products)
+
       }catch(err) {}
     };
-      
+
     fetchData();
-    }, [])
+    },[]);
+    
 
     return (
   <div className="list-group">
@@ -33,7 +36,7 @@ const ProductList = (props) => {
       </thead>
       
       <tbody>
-        {products && products.map((product) => {
+        {/* {products && products.map((product) => {
           return(
           <tr key={product.id}>
             <td>{product.productID}</td>
@@ -47,7 +50,7 @@ const ProductList = (props) => {
 
             </tr>
           );
-        })}
+        })} */}
         {/* <tr>
               <td>1</td>
             <td>maranta</td>
