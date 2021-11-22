@@ -1,45 +1,53 @@
-import React, { useContext, useEffect} from "react";
-import ProductFinder from "../apis/ProductFinder";
-import { ProductsContext } from "../context/ProductContext";
+import React, { Fragment,  useEffect, useState} from "react";
 
 
 
-const ProductList = (props) => {
-  const {products, setProducts} = useContext(ProductsContext)
+
+const ProductList = () => {
+  const [products, setProducts] = useState([]);
+
+const getProduct = async () => {
+  try {
+    const response = await fetch("http://localhost:3000/products");
+    const jsonData = await response.json();
+
+    setProducts(jsonData);
+  }catch(err){
+    console.log(err.message);
+  }
+}
+
  useEffect(() => {
-const fetchData = async () => {
-      try{
-          const response = await ProductFinder.get("/");
-          setProducts(response.data.data.products)
+getProduct();
 
-      }catch(err) {}
-    };
-
-    fetchData();
-    },[]);
+    }, []);
     
+console.log(products);
 
     return (
-  <div className="list-group">
+<Fragment>
+  {" "}
     <table className="table table-hover table-dark">
       <thead>
-             <tr>
-               <th>ID</th>
-               <th>Name</th>
-               <th>Price</th>
-               <th>Units in stock</th>
-               <th>description</th>
-               <th>Images</th>
-              <th>Delete</th>
-               <th>Edit</th>
+             <tr className="bg-secondary">
+          
+               <th scope="col">Name</th>
+               <th scope="col">Price</th>
+               <th scope="col">Units in stock</th>
+               <th scope="col">description</th>
+               <th scope="col">Images</th>
+              <th scope="col">Delete</th>
+               <th scope="col">Edit</th>
             </tr>
       </thead>
-      
       <tbody>
-        {/* {products && products.map((product) => {
+
+
+
+        {products.map((product) => {
           return(
           <tr key={product.id}>
-            <td>{product.productID}</td>
+     
             <td>{product.name}</td>
             <td>{product.price}</td>
             <td>{product.unitsInStock}</td>
@@ -50,18 +58,12 @@ const fetchData = async () => {
 
             </tr>
           );
-        })} */}
-        {/* <tr>
-              <td>1</td>
-            <td>maranta</td>
-              <td>29.99</td>
-             <td>27</td>
-              <td><button className="btn btn-danger">Delete</button></td>
-            <td><button className="btn btn-primary">Update</button></td>
-            </tr> */}
+        })}
+       
         </tbody>
     </table>
-  </div>
+    </Fragment>
+  
  
 
     )

@@ -1,14 +1,15 @@
-import React from "react";
+import React, {Fragment} from "react";
 import AddProduct from "../components/AddProduct";
 import ProductList from "../components/ProductList";
 
 const Admin = () => {
     return (
-        <div>
+        <Fragment>
+            <div className="container">
             <AddProduct />
             <ProductList />
-          
-        </div>
+          </div>
+        </Fragment>
     )
 }
 export default Admin;
