@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const db = require("./db");
-const { Pool } = require("pg");
+const pool = require("./db");
 const app = express();
 
 app.use(cors());
@@ -41,7 +40,11 @@ app.get("/products/:id", async (req, res) => {
 app.post("/products", async (req, res) => {
 
     try{
-        const {name, price, description, images} = req.body;
+        const {name} = req.body;
+        const {price} = req.body;
+        const {description} = req.body;
+        const {images} = req.body;
+        
         const newProduct = await pool.query("INSERT INTO products (name, price, description, images) values ($1, $2, $3, $4) returning *", 
         [name,price, description,images]
         );

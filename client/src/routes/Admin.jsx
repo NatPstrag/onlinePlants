@@ -1,13 +1,13 @@
 import React, {Fragment} from "react";
 import AddProduct from "../components/AddProduct";
-import ProductList from "../components/ProductList";
+// import ProductList from "../components/ProductList";
 
 const Admin = () => {
     return (
         <Fragment>
             <div className="container">
             <AddProduct />
-            <ProductList />
+            {/* <ProductList /> */}
           </div>
         </Fragment>
     )
