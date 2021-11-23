@@ -1,26 +1,29 @@
 import React, { useState } from "react";
 
+import ProductFinder from "../apis/ProductFinder";
+
 
 
 const AddProduct = () => {
+
     
     const [name, setName]= useState("");
     const [price, setPrice]= useState("");
     const [description, setDescription]= useState("");
     const [images, setImages]= useState("");
 
-    const onSubmitForm = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-                const body = {name, price,description, images};
-                const response = await fetch("http://localhost:5000/products", {
-                    method: "POST",
-                    headers: {"Content-Type": "appliction/json" },
-                    body: JSON.stringify(body)
-                })
-                     console.log(response);
-            //    window.location="/";
-              
+                const response = await ProductFinder.post("/", {
+                     name,
+                    price,
+                    description,
+                    images,
+                });
+      console.log(response.data.data);
+          
+        
         }catch(err){
                 console.error(err.message)
         }
@@ -29,7 +32,7 @@ const AddProduct = () => {
     return (
     
        <div className="mb-8">
-           <form className="d-flex mt-5" onSubmit={onSubmitForm}>
+           <form className="d-flex mt-5" >
                <div className="col">
                     <div className="col-md-6 offset-md-3">
                         <div className="row gw-2">
@@ -62,7 +65,7 @@ const AddProduct = () => {
                     <div className="col-md-6 offset-md-3">
                         <div className="row gx-2">
                             <div className="p-3">
-                                <button  className="btn btn-outline-info  btn-md ">Add</button>
+                                <button onClick={handleSubmit} type="submit" className="btn btn-outline-info  btn-md ">Add</button>
                                  </div>
                         </div>
                     </div>
