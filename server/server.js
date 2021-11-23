@@ -37,7 +37,7 @@ app.get("/products/:id", async (req, res) => {
 
 //Create a product
 
-app.post("/products", async (req, res) => {
+app.post("/admin", async (req, res) => {
 
     try{
         const {name} = req.body;
