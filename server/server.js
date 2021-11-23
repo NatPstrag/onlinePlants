@@ -38,18 +38,16 @@ app.get("/products/:id", async (req, res) => {
 //Create a product
 
 app.post("/admin", async (req, res) => {
+    console.log(req.body)
 
     try{
-        const {name} = req.body;
-        const {price} = req.body;
-        const {description} = req.body;
-        const {images} = req.body;
+
         
         const newProduct = await pool.query("INSERT INTO products (name, price, description, images) values ($1, $2, $3, $4) returning *", 
-        [name,price, description,images]
+        [req.body.name,req.body.price, req.body.description,req.body.images]
         );
-       res.json(newProduct.rows[0]);
-
+     res.json(newProduct.rows[0]);
+   
     }catch (err){
         console.log(err.message)
     }
@@ -76,13 +74,13 @@ try{
 //Delete product
 app.delete("/products/:id", async (req, res) => {
 try{
-    const {id} = req.body;
-const deleteProduct =await pool.query("DELETE FROM products where productID = $1", [id]);
-
+    let {id} = req.params;
+    let data =await pool.query("DELETE FROM products where productID = $1", [id]);
+console.log(id)
 res.json("Product was deleted!");
 }catch(err)
 {
-    console.log(err.message)
+    console.error(err.message)
 }
 
     

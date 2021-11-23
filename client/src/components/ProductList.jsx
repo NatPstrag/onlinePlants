@@ -2,10 +2,6 @@ import React, { useEffect, useState} from "react";
 import axios from "axios";
 
 
-
-
-
-
 const ProductList = () => {
  
 const[products, setProducts] = useState([])
@@ -22,6 +18,15 @@ const[products, setProducts] = useState([])
         })
     },[])
 
+
+
+     const handleDelete =  (productid) => {
+    try {
+     console.log("ID:" ,productid)
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
 
 return(
  
@@ -40,14 +45,14 @@ return(
       </thead>
     <tbody>
         {products.map((product) => (
-            <tr key={product.productID}>
+            <tr key={product.productid}>
             
                 <td>{product.name}</td>
                 <td>{product.price}</td>
                 <td>{product.unitsInStock}</td>
                 <td>{product.description}</td>
                 <td>{product.images}</td>
-                <td><button className="btn btn-danger">Delete</button></td>
+                <td><button onClick={() => handleDelete(product.productID)} className="btn btn-danger">Delete</button></td>
                 <td><button className="btn btn-primary">Update</button></td>
             </tr>
           ))}

@@ -6,13 +6,15 @@ export const ProductsContextProvider = (props) => {
   const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProducts] = useState(null);
 
-
+      const addProducts = (product) => {
+        setProducts([...products,product]);
+      }
   return (
     <ProductsContext.Provider
       value={{
         products,
         setProducts,
-
+        addProducts,
         selectedProduct,
         setSelectedProducts,
       }}

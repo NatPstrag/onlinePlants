@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import ProductFinder from "../apis/ProductFinder";
+import { ProductsContext } from "../context/ProductsContext";
 
 
 
 const AddProduct = () => {
-
+const {addProducts} =useContext(ProductsContext);
     
     const [name, setName]= useState("");
     const [price, setPrice]= useState("");
@@ -21,10 +22,9 @@ const AddProduct = () => {
                     description,
                     images,
                 });
-      console.log(response.data.data);
-          
-        
-        }catch(err){
+    addProducts(response.data.data);
+
+          }catch(err){
                 console.error(err.message)
         }
     
