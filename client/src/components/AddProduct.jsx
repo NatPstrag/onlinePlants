@@ -1,37 +1,34 @@
-import React, { useContext, useState } from "react";
-
-import ProductFinder from "../apis/ProductFinder";
-import { ProductsContext } from "../context/ProductsContext";
-
-
+import React, { useState } from "react";
 
 const AddProduct = () => {
-const {addProducts} =useContext(ProductsContext);
+
     
     const [name, setName]= useState("");
     const [price, setPrice]= useState("");
     const [description, setDescription]= useState("");
     const [images, setImages]= useState("");
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-                const response = await ProductFinder.post("/", {
-                     name,
-                    price,
-                    description,
-                    images,
-                });
-    addProducts(response.data.data);
 
-          }catch(err){
-                console.error(err.message)
-        }
-    
-    };
-    return (
-    
-       <div className="mb-8">
+
+    function saveData()
+    {
+        let data={name, price, description, images}
+        fetch("http://localhost:5000/products", {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+      'Content-Type': 'application/json',
+            },
+             body:JSON.stringify(data)
+  }).then((resp)=>{
+
+    resp.json().then((result)=>{
+      console.warn("result",result)
+    })
+  })
+}
+return (
+    <div className="mb-8">
            <form className="d-flex mt-5" >
                <div className="col">
                     <div className="col-md-6 offset-md-3">
@@ -65,7 +62,7 @@ const {addProducts} =useContext(ProductsContext);
                     <div className="col-md-6 offset-md-3">
                         <div className="row gx-2">
                             <div className="p-3">
-                                <button onClick={handleSubmit} type="submit" className="btn btn-outline-info  btn-md ">Add</button>
+                                <button onClick={saveData} type="submit" className="btn btn-outline-info  btn-md ">Add</button>
                                  </div>
                         </div>
                     </div>

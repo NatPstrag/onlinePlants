@@ -101,7 +101,7 @@ app.delete("/products/:id", async (req, res) => {
 try{
 
     const results =db.query("DELETE FROM products where productid = $1", [req.params.id]);
-
+console.log(id);
 res.status(204).json({
     status: "success"
 })

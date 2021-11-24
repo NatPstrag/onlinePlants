@@ -9,11 +9,15 @@ export const ProductsContextProvider = (props) => {
       const addProducts = (product) => {
         setProducts([...products,product]);
       }
+      const deleteProd= (productid) => {
+  setProducts(products.filter(product => product.productid !== productid))
+}
   return (
     <ProductsContext.Provider
       value={{
         products,
         setProducts,
+        deleteProd,
         addProducts,
         selectedProduct,
         setSelectedProduct,
