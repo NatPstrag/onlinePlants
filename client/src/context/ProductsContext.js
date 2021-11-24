@@ -4,7 +4,7 @@ export const ProductsContext = createContext();
 
 export const ProductsContextProvider = (props) => {
   const [products, setProducts] = useState([]);
-  const [selectedProduct, setSelectedProducts] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
       const addProducts = (product) => {
         setProducts([...products,product]);
@@ -16,7 +16,7 @@ export const ProductsContextProvider = (props) => {
         setProducts,
         addProducts,
         selectedProduct,
-        setSelectedProducts,
+        setSelectedProduct,
       }}
     >
       {props.children}

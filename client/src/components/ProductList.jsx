@@ -1,23 +1,24 @@
-import React, { useEffect, useState} from "react";
-import axios from "axios";
+import React, { useContext, useEffect} from "react";
+import ProductFinder from "../apis/ProductFinder";
+import { ProductsContext } from "../context/ProductsContext";
 
 
-const ProductList = () => {
+const ProductList = (props) => {
  
-const[products, setProducts] = useState([])
+const{products, setProducts} = useContext(ProductsContext);
 
 
     useEffect(() => {
-        axios.get('http://localhost:5000/products')
-        .then(res => {
-            console.log(res)
-            setProducts(res.data)
-        })
-        .catch(err => {
-            console.log(err)
-        })
-    },[])
-
+        const fetchData = async () => {
+            try{
+                const response = await ProductFinder.get("/");
+                console.log(response.data.data);
+                setProducts(response.data.data.products);
+            }catch(err){}
+        };
+        fetchData();
+      }, []);
+       
 
 
      const handleDelete =  (productid) => {
@@ -29,11 +30,11 @@ const[products, setProducts] = useState([])
   };
 
 return(
- 
+ <div className="list-group">
     <table className="table table-hover table-dark">
       <thead>
         <tr className="bg-secondary">
- 
+            <th scope="col">ID</th>
             <th scope="col">Name</th>
             <th scope="col">Price</th>
             <th scope="col">Units in stock</th>
@@ -44,9 +45,10 @@ return(
         </tr>
       </thead>
     <tbody>
-        {products.map((product) => (
+        {products && products.map((product) => {
+          return(
             <tr key={product.productid}>
-            
+                <td>{product.productid}</td>
                 <td>{product.name}</td>
                 <td>{product.price}</td>
                 <td>{product.unitsInStock}</td>
@@ -55,10 +57,11 @@ return(
                 <td><button onClick={() => handleDelete(product.productID)} className="btn btn-danger">Delete</button></td>
                 <td><button className="btn btn-primary">Update</button></td>
             </tr>
-          ))}
+          )
+})}
        </tbody> 
         </table>
-   
+   </div>
         );
-    };
+    }
  export default ProductList;
