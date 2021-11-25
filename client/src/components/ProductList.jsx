@@ -1,43 +1,12 @@
-import React, { useContext, useEffect, useState} from "react";
+import React, { useContext, useEffect} from "react";
 import ProductFinder from "../apis/ProductFinder";
 import {ProductsContext} from "../context/ProductsContext"
 
 
 const ProductList = (props) => {
- const[list, setList] = useState([]);
+
 const{products, setProducts} = useContext(ProductsContext);
-const{deleteProd} = useContext(ProductsContext)
 
-
-// const deleteProduct = async (productid) => {
-     
-//         try {
-//                 const response = await ProductFinder.delete(`/${productid}`, {
-              
-//                 });
-//     deleteProd(response.data.data);
-//     window.location.reload(false);
-
-//           }catch(err){
-//                 console.error(err.message)
-//         }
-    
-//     };
-
-
-const deleteProduct = async (productid) => {
-  try{
-    //console.log("ID: ", productid )
-    const del = await fetch(`http://localhost:5000/products/${productid}`,{
-      method: "DELETE"
-    })
-    setList(list.filter(elt=>{
-      return elt.productid !== productid;
-    }))
-  }catch(err){
-    console.error(err.message)
-  }
-}
 
     useEffect(() => {
         const fetchData = async () => {
@@ -49,6 +18,23 @@ const deleteProduct = async (productid) => {
         };
         fetchData();
       }, []);
+
+
+     function deleteProduct(productid)
+    {
+        if(window.confirm('Are you sure?'))
+        {
+            fetch('http://localhost:5000/products/'+productid,{
+                method:'DELETE',
+                header:{'Accept':'application/json',
+                'Content-Type':'application/json',
+                
+            }
+  
+            })
+        }
+        window.location.reload();
+    }
        
 return(
  <div className="list-group">
