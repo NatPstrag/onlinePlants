@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import  classes from './AddProduct.module.css'
+import'./button.css'
+
 
 const AddProduct = () => {
 
@@ -24,58 +27,31 @@ const AddProduct = () => {
 
     resp.json().then((result)=>{
       console.warn("result",result)
+      window.location.reload();
     })
   })
-}
-return (
-    <div className="mb-8">
-           <form className="d-flex mt-5" >
-               <div className="col">
-                    <div className="col-md-6 offset-md-3">
-                        <div className="row gw-2">
-                            <div className="p-3">
-                                <input value={name} onChange={e => setName(e.target.value)} type="text" className="form-control" placeholder ="name"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-6 offset-md-3">
-                        <div className="row gx-2">
-                            <div className="p-3">
-                                <input value={price} onChange={e => setPrice(e.target.value)} type="number" className="form-control" placeholder ="price"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-6 offset-md-3">
-                        <div className="row gx-2">
-                            <div className="p-3">
-                                <input value={description} onChange={e => setDescription(e.target.value)} type="text" className="form-control" placeholder ="description"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-6 offset-md-3">
-                        <div className="row gx-2">
-                            <div className="p-3">
-                                <input value={images} onChange={e => setImages(e.target.value)} type="text" className="form-control" placeholder ="images"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-6 offset-md-3">
-                        <div className="row gx-2">
-                            <div className="p-3">
-                                <button onClick={saveData} type="submit" className="btn btn-outline-info  btn-md ">Add</button>
-                                 </div>
-                        </div>
-                    </div>
-      
-                </div>
-            </form>
-        </div>
-    
-      
+    }
 
+
+
+return (
+    <div className={classes.column11}>
+        <div className="p-3">
+            <input value={name} onChange={e => setName(e.target.value)} type="text" className="form-control" placeholder ="name"/>
+        </div>
+        <div className="p-3">
+            <input value={price} onChange={e => setPrice(e.target.value)} type="number" className="form-control" placeholder ="price"/>
+        </div>
+        <div className="p-3">
+            <input value={description} onChange={e => setDescription(e.target.value)} type="text" className="form-control" placeholder ="description"/>
+        </div>
+        <div className="p-3">
+            <input value={images} onChange={e => setImages(e.target.value)} type="text" className="form-control" placeholder ="images"/>
+        </div>
+        <div className="p-3">
+            <button  className="name noselect" onClick={saveData} type="submit">Add</button>
+        </div>
+    </div>
     )
 }
-
-
-
 export default AddProduct;

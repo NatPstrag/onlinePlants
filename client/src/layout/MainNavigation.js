@@ -10,6 +10,9 @@ const MainNavigation = () => {
                 Plants are friends!
             </h1>
              </div>
+             
+
+
             <nav>
                 <ul>
                 
@@ -22,7 +25,8 @@ const MainNavigation = () => {
                   
                 </ul>
             </nav>
-        </header>
+              </header>
+      
     )
 }
 export default MainNavigation;

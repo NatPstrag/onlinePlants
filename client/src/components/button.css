@@ -1,0 +1,30 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+button{
+	width: 150px;
+	height: 30px;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: bold;
+	color: rgb(58, 38, 38);
+	background: white;
+	border: 2px solid rgb(48, 33, 33);
+	box-shadow: 5px 5px 0 rgb(17, 43, 18),
+		-5px -5px 0 rgb(37, 78, 59),
+		-5px 5px 0 rgb(70, 46, 46),
+		5px -5px 0 rgb(29, 52, 73);
+	transition: 500ms ease-in-out;
+    width:6rem; 
+    margin-left:60; 
+    margin-right:0%;
+}
+button:hover {
+box-shadow: 20px 5px 0 rgb(173, 171, 58), -20px -5px 0 rgb(117, 131, 79);
+}
+
+button:focus {
+outline: none;
+}

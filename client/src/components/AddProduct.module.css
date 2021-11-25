@@ -1,0 +1,55 @@
+.app-container {
+display: flex;
+height: 40rem;
+gap: 5px;
+padding: 20rem;
+width:70%; 
+margin-left:15%; 
+margin-right:15%;
+}
+
+.column11{
+   height: 40rem;
+   width:30rem; 
+    margin-left:68%; 
+    margin-right:10%;
+    padding-top:260px;
+}
+table {
+border-collapse: collapse;
+height: 15rem;
+width:96rem; 
+margin-left:15%; 
+margin-right:15%;
+}
+th,
+td {
+border: 1px solid #80886d;
+text-align: center;
+padding: 10px;
+font-size: 20px;}
+
+th {
+background-color: rgb(7, 19, 16);
+font-size: 25px;
+text-align: center;
+}
+td {
+background-color: rgb(27, 39, 31);
+margin-left: auto;
+margin-right: auto;
+}
+
+form {
+display: flex;
+gap: 5px;
+}
+
+form td:last-child {
+display: flex;
+justify-content: space-evenly;
+}
+
+form * {
+font-size: 60px;
+}

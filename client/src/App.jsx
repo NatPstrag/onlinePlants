@@ -12,7 +12,7 @@ import UpdatePage from './routes/UpdatePage';
 const App = () => {
     return(
         <ProductsContextProvider>
-        <div className="constainer">
+   
             <BrowserRouter>
                 <MainNavigation />
                     <Routes>
@@ -24,7 +24,7 @@ const App = () => {
                     </Routes>
             </BrowserRouter>
             
-        </div>
+
         </ProductsContextProvider>
    
     );
