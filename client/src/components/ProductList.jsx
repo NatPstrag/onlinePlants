@@ -1,11 +1,13 @@
 import React, { useContext, useEffect} from "react";
 import ProductFinder from "../apis/ProductFinder";
 import {ProductsContext} from "../context/ProductsContext"
+import { useNavigate} from "react-router-dom";
 import classes from "./AddProduct.module.css"
 
 
 const ProductList = (props) => {
 const{products, setProducts} = useContext(ProductsContext);
+ let history = useNavigate();
 
 useEffect(() => {
         const fetchData = async () => {
@@ -28,6 +30,11 @@ useEffect(() => {
                 'Content-Type':'application/json',
         }})}
         window.location.reload();}
+
+
+        const handleUpdate = (productid) =>{
+          history(`/products/${productid}/update`)
+        }
        
 return(
 <div className={classes.center}>
@@ -56,7 +63,8 @@ return(
         <td><button 
         onClick={() => deleteProduct(product.productid)} 
         className="btn btn-danger">Delete</button></td>
-        <td><button className="btn btn-primary">Update</button></td>
+
+        <td><button onClick={() => handleUpdate(product.productid)} className="btn btn-success">Update</button></td>
       </tr>
     )})}
   </tbody> 
