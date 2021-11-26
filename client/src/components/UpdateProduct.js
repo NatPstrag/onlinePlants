@@ -17,11 +17,27 @@ const UpdateProduct = (props) => {
         const fetchData = async() => {
             const response = await ProductFinder.get(`/${productid}`)
             console.log(response.data.data)
+            setName(response.data.data.products.name)
+             setPrice(response.data.data.products.price)
+              setDescription(response.data.data.products.description)
+               setImages(response.data.data.products.images)
         }
 
         fetchData()
     },[])
    
+
+const handleSubmit = async (e) => {
+    e.preventDefault()
+    const UpdateProduct = await ProductFinder.put(`/${productid}`, (
+        name, 
+        price,
+        description,
+        images
+    ))
+    console.log(UpdateProduct);
+}
+
     return(
         <div>
  
@@ -48,7 +64,7 @@ const UpdateProduct = (props) => {
            <input value={images} onChange={e => setImages(e.target.value)}
            id="images" className="form-control" type ="text" />
        </div>
-       <button className="btn btn-secondary"> Submit</button>
+       <button type="submit" onClick={handleSubmit} className="btn btn-secondary"> Submit</button>
    </form>
    
         </div>
