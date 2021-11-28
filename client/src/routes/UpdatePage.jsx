@@ -2,7 +2,8 @@ import React, {Fragment, useState} from "react";
 
 
 const UpdatePage = ({product}) => {
-      const [name, setName]= useState(product.name);
+
+    const [name, setName]= useState(product.name);  
     const [price, setPrice]= useState(product.price);
     const [description, setDescription]= useState(product.description);
     const [images, setImages]= useState(product.images);
@@ -33,14 +34,17 @@ return(
         <input type="number" 
         className="form-control" 
         value={price}
+        onChange={e => setPrice(e.target.value)}
         />
         <input type="text" 
         className="form-control" 
         value={description}
+        onChange={e => setDescription(e.target.value)}
         />
         <input type="text" 
         className="form-control" 
         value={images}
+        onChange={e => setImages(e.target.value)}
         />
         </div>
         <div class="modal-footer">
