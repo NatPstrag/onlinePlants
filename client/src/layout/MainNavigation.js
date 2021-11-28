@@ -18,11 +18,8 @@ const MainNavigation = () => {
                 
                         <Link to='/'>Home page</Link>
                         <Link to='/products/:id'>product detail</Link>
-                        <Link to='/products/:id/update'>update page</Link>
                         <Link to='/cart'>Cart</Link>
                         <Link to='/products'>Admin</Link>
-                        
-                  
                 </ul>
             </nav>
               </header>

@@ -96,6 +96,8 @@ try{
   console.log(req.body);
   });
 
+
+
 //Delete product
 app.delete("/products/:id", async (req, res) => {
 try{

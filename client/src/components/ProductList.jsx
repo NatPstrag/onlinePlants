@@ -3,6 +3,7 @@ import ProductFinder from "../apis/ProductFinder";
 import {ProductsContext} from "../context/ProductsContext"
 import { useNavigate} from "react-router-dom";
 import classes from "./AddProduct.module.css"
+import UpdatePage from "../routes/UpdatePage";
 
 
 const ProductList = (props) => {
@@ -32,9 +33,9 @@ useEffect(() => {
         window.location.reload();}
 
 
-        const handleUpdate = (productid) =>{
-          history(`/products/${productid}/update`)
-        }
+        // const handleUpdate = (productid) =>{
+        //   history(`/products/${productid}/update`)
+        // }
        
 return(
 <div className={classes.center}>
@@ -64,7 +65,7 @@ return(
         onClick={() => deleteProduct(product.productid)} 
         className="btn btn-danger">Delete</button></td>
 
-        <td><button onClick={() => handleUpdate(product.productid)} className="btn btn-success">Update</button></td>
+        <td><UpdatePage product={product}/></td>
       </tr>
     )})}
   </tbody> 
