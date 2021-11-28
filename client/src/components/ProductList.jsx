@@ -21,11 +21,11 @@ useEffect(() => {
         fetchData();
       }, []);
 
-     function deleteProduct(productid)
-    {
+     function deleteProduct(e, productid)
+    {e.stopPropagation()
         if(window.confirm('Are you sure?'))
         {
-            fetch('http://localhost:5000/products/'+productid,{
+            fetch('http://localhost:5000/admin/'+productid,{
                 method:'DELETE',
                 header:{'Accept':'application/json',
                 'Content-Type':'application/json',
@@ -37,6 +37,10 @@ useEffect(() => {
         //   history(`/products/${productid}/update`)
         // }
        
+// const handleProductSelect = (productid) => {
+//   history(`/products/${productid}`)
+// }
+
 return(
 <div className={classes.center}>
  <div className="list-group">
@@ -55,14 +59,16 @@ return(
 <tbody>
   {products && products.map((product) => {
     return(
-      <tr key={product.productid}>
+      <tr 
+      // onClick={() => handleProductSelect(product.productid)} 
+      key={product.productid}>
         <td>{product.productid}</td>
         <td>{product.name}</td>
         <td>{product.price}</td>
         {/* <td>{product.description}</td>
         <td>{product.images}</td> */}
         <td><button 
-        onClick={() => deleteProduct(product.productid)} 
+        onClick={(e) => deleteProduct(e, product.productid)} 
         className="btn btn-danger">Delete</button></td>
 
         <td><UpdatePage product={product}/></td>

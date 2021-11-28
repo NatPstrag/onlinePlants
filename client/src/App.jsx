@@ -16,11 +16,11 @@ const App = () => {
             <BrowserRouter>
                 <MainNavigation />
                     <Routes>
-                        <Route exact path="/" element={<Home />}/>
+                        <Route exact path="/products" element={<Home />}/>
                         <Route exact path="/products/:id" element={<ProductDetailPage />}/>
-                        <Route exact path="/products/:id/update" element={<UpdatePage />}/>
+                        <Route exact path="/admin/:id" element={<UpdatePage />}/>
                         <Route exact path="/cart" element={<Cart />}/>
-                        <Route exact path="/products" element={<Admin />}/>
+                        <Route exact path="/admin" element={<Admin />}/>
                     </Routes>
             </BrowserRouter>
             

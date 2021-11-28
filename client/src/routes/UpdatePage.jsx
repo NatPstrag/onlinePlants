@@ -10,17 +10,20 @@ const UpdatePage = ({product}) => {
 
 
     //edit product function
-    const updateProduct = async(e) => {
-        e.preventDefault();
+    function updateProduct(e, productid)
+    {
+        e.stopPropagation()
+     
         try{
             const body= {name, price, description, images};
-            const response = await fetch(`http://localhost:5000/products/${product.productid}`, {
+            const response = fetch(`http://localhost:5000/admin/${productid}`, {
                 method: "PUT",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(body)
             })
 
             console.log(response)
+                  window.location.reload();
         }catch(err) {
             console.error(err.message)
         }
@@ -32,7 +35,7 @@ return(
         <button type="button" 
             class="btn btn-warning" 
             data-toggle="modal" 
-            data-target={`#id${product.productid}`}>
+            data-target={` #id${product.productid}`}>
               Edit
         </button>
         <div class="modal" id={`id${product.productid}`}>
@@ -66,12 +69,11 @@ return(
         onChange={e => setImages(e.target.value)}
         />
         </div>
-
         <div class="modal-footer">
-        <button type="button" 
+        <button type="submit" 
                 class="btn btn-warning"
                 data-dismiss="modal" 
-                onClick={e => updateProduct(e)}
+                onClick={(e) => updateProduct(e, product.productid)} 
         >
             Edit
         </button>

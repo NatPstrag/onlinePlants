@@ -53,7 +53,7 @@ app.get("/products/:id", async (req, res) => {
 
 //Create a product
 
-app.post("/products", async (req, res) => {
+app.post("/admin", async (req, res) => {
     console.log(req.body)
 
     try{
@@ -76,7 +76,7 @@ app.post("/products", async (req, res) => {
 });
 //Update product
 
-app.put("/products/:id" , async (req, res) => {
+app.put("/admin/:id" , async (req, res) => {
 try{
     
     const results= await db.query("UPDATE products SET name = $1, price = $2,  description = $3, images = $4 where productid= $5 returning *",
@@ -99,7 +99,7 @@ try{
 
 
 //Delete product
-app.delete("/products/:id", async (req, res) => {
+app.delete("/admin/:id", async (req, res) => {
 try{
 
     const results =db.query("DELETE FROM products where productid = $1", [req.params.id]);

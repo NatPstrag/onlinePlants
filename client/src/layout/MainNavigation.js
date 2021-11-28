@@ -16,10 +16,10 @@ const MainNavigation = () => {
             <nav>
                 <ul>
                 
-                        <Link to='/'>Home page</Link>
-                        <Link to='/products/:id'>product detail</Link>
+                        <Link to='/products'>Home page</Link>
+                
                         <Link to='/cart'>Cart</Link>
-                        <Link to='/products'>Admin</Link>
+                        <Link to='/admin'>Admin</Link>
                 </ul>
             </nav>
               </header>

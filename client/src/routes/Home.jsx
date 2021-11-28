@@ -1,5 +1,8 @@
 import React from "react";
 
+import ProductListClient from "../components/ProductListClient";
+
+
 
 
 
@@ -9,8 +12,9 @@ const Home = () => {
         <div>
           {/* <Header /> */}
           Home
-  
-      </div>
+          <ProductListClient />
+ 
+        </div>
     )
 }
 export default Home;

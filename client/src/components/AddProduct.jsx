@@ -16,7 +16,7 @@ const AddProduct = () => {
     function saveData()
     {
         let data={name, price, description, images}
-        fetch("http://localhost:5000/products", {
+        fetch("http://localhost:5000/admin", {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
