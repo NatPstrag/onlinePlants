@@ -8,6 +8,25 @@ const UpdatePage = ({product}) => {
     const [description, setDescription]= useState(product.description);
     const [images, setImages]= useState(product.images);
 
+
+    //edit product function
+    const updateProduct = async(e) => {
+        e.preventDefault();
+        try{
+            const body= {name, price, description, images};
+            const response = await fetch(`http://localhost:5000/products/${product.productid}`, {
+                method: "PUT",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(body)
+            })
+
+            console.log(response)
+        }catch(err) {
+            console.error(err.message)
+        }
+
+    }
+
 return(
     <Fragment>
         <button type="button" 
@@ -47,9 +66,13 @@ return(
         onChange={e => setImages(e.target.value)}
         />
         </div>
+
         <div class="modal-footer">
         <button type="button" 
-        class="btn btn-warning" >
+                class="btn btn-warning"
+                data-dismiss="modal" 
+                onClick={e => updateProduct(e)}
+        >
             Edit
         </button>
         </div>
@@ -57,7 +80,6 @@ return(
     </div>
     </div>
     </Fragment>
-      
     )
 }
 export default UpdatePage;
