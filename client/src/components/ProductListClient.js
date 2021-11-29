@@ -3,8 +3,12 @@
 import React, { useContext, useEffect} from "react";
 import ProductFinder from "../apis/ProductFinder";
 import {ProductsContext} from "../context/ProductsContext"
-import classes from "./AddProduct.module.css"
+// import classes from "./AddProduct.module.css"
 import { useNavigate } from "react-router";
+import {Card, Button} from 'react-bootstrap'
+import classes from './ProductListClient.module.css'
+
+
 
 
 
@@ -28,42 +32,44 @@ useEffect(() => {
         fetchData();
       }, []);
 
-    
 
 
 return(
-<div className={classes.center}>
+
  <div className="list-group">
-    <table align="center">
-      <thead>
-        <tr className="bg-secondary">
- 
-          <th scope="col">Name</th>
-          <th scope="col">Price</th>
-          <th scope="col">Description</th>
-          <th scope="col">Images</th>
-  
-        </tr>
-      </thead>
-<tbody>
-  {products && products.map((product) => {
+
+
+    <div className={classes.container}>
+      {products && products.map((product) => {
     return(
-      <tr 
+      <div 
       onClick={() => handleProductSelect(product.productid)} 
       key={product.productid}>
-    
-        <td>{product.name}</td>
-        <td>{product.price}</td>
-        <td>{product.description}</td>
-        <td>{product.images}</td>
 
 
 
-      </tr>
+<Card className={classes.card}>
+  <Card.Img variant="top" className={classes.imgBOX} src={product.images} />
+  <Card.Body>
+    <Card.Title>{product.name}</Card.Title>
+    <Card.Text>
+ {product.description}
+ <td>
+   {product.price}
+   </td>
+ 
+    </Card.Text>
+    <Button variant="primary">Koszyk</Button>
+    <Button variant="primary">ulubione</Button>
+  </Card.Body>
+</Card>
+</div>
+
     )})}
-  </tbody> 
-</table>
+
+</div>
    </div>
-   </div>
+
+
 );}
  export default ProductListClient;
