@@ -1,23 +1,22 @@
 
 body{
    background-image: url(../img/back.png), url(../img/gradient.png);
-   background-repeat: no-repeat, no-repeat;
-   width: 1000px;
-   height: 1000px;
-    background-color: #637660;
+
+  
+background-color: #637660;
   font-family: "Sofia", sans-serif;
   font-size: 30px;
   color: antiquewhite;
  
 }
 .header{
-    width: 160%;
-   height: 10rem;
+
+
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    
+
     background-image: url(../img/back.png);
-    padding: 0 0%;
+
 
 }
 
@@ -33,25 +32,18 @@ body{
 
 .header ul {
     list-style: none;
-    margin: 0;
-    padding: 5rem;
-    display: flex;
+
     align-items: baseline;
     
 }
-.header li {
-    margin-left: 0rem;
-   padding-right: 2rem;
-    
-}
+
 
 .header a{
     text-decoration: none;
     font-size: 1.5rem;
     color:antiquewhite;
-    padding: 2rem;
-    padding-top: 1%;
-    padding-right: 7%;
+  
+
    
 }
 
