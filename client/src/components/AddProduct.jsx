@@ -35,6 +35,7 @@ const AddProduct = () => {
 
 
 return (
+    <div className="center">
     <div className={classes.column11}>
         <div className="p-3">
             <input value={name} onChange={e => setName(e.target.value)} type="text" className="form-control" placeholder ="name"/>
@@ -51,6 +52,7 @@ return (
         <div className="p-3">
             <button  className="name noselect" onClick={saveData} type="submit">Add</button>
         </div>
+    </div>
     </div>
     )
 }

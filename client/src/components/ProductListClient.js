@@ -4,7 +4,6 @@ import React, { useContext, useEffect} from "react";
 import ProductFinder from "../apis/ProductFinder";
 import {ProductsContext} from "../context/ProductsContext"
 import { useNavigate } from "react-router";
-import {Card, Button} from 'react-bootstrap'
 import classes from './ProductListClient.module.css'
 
 
@@ -45,35 +44,42 @@ return(
       onClick={() => handleProductSelect(product.productid)} 
       key={product.productid}>
 
-{/* <Card className={classes.card}>
-  <Card.Img variant="top" className={classes.imgBOX} src={product.images} />
-  <Card.Body>
-    <Card.Title>{product.name}</Card.Title>
-    <Card.Text>
- {product.description}
- <td>
-   {product.price}
-   </td>
- 
-    </Card.Text>
-    <Button variant="primary">Koszyk</Button>
-    <Button variant="primary">ulubione</Button>
-  </Card.Body>
-</Card> */}
-
-
- 
-<div className={classes.wrapper}>
-<div className={classes.card}>
-  <div className="card__body">
-    <img src={product.images} className={classes.image}/>
-      <h2 className={classes.title}>{product.name}</h2>
-      <p className="card__description">{product.description}</p>
-  </div>
-  <button className="card__btn">koszyk</button>
-</div>
-</div>
-
+  <div className={classes.flipcard}>
+      <div className={classes.flipcardinner}>
+        <div className={classes.flipcardfront}>
+         <img src={product.images} className={classes.image}/>
+        </div>
+      </div>
+    </div> 
+    
+    {/* <div className={classes.shell}>
+  <div className="container">
+    <div className="row">
+      <div className="col-md-3">
+        <div className={classes.wskcpproduct}>
+          <div className={classes.wskcpimg}>
+          <img src={product.images} className={classes.image}/>
+          </div>
+          <div className={classes.wskcptext}>
+            <div className="category">
+              <span>{product.name}</span>
+            </div>
+            <div className={classes.titleproduct}>
+              <h3>{product.name}</h3>
+            </div>
+            <div className={classes.descriptionprod}>
+              <p>{product.description}</p>
+            </div>
+            <div class="card-footer">
+              <div class="wcf-left"><span class="price">Rp500.000</span></div>
+              <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+      </div> */}
 
 </div>
 
