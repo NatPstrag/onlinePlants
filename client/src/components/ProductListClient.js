@@ -38,6 +38,7 @@ return(
 
 
 <div className = "container">
+      <div className={classes.wskcpproduct}> 
       {products && products.map((product) => {
     return(
       <div 
@@ -45,47 +46,26 @@ return(
       key={product.productid}>
 
   <div className={classes.flipcard}>
+    
       <div className={classes.flipcardinner}>
         <div className={classes.flipcardfront}>
+          
          <img src={product.images} className={classes.image}/>
-        </div>
-      </div>
-    </div> 
-    
-    {/* <div className={classes.shell}>
-  <div className="container">
-    <div className="row">
-      <div className="col-md-3">
-        <div className={classes.wskcpproduct}>
-          <div className={classes.wskcpimg}>
-          <img src={product.images} className={classes.image}/>
+         <div className={classes.cardoverlay}></div>
+                <div className={classes.cardcontent }>
+                   <h2>Description</h2>
+                    <p>{product.description}</p>
+              
+                    </div>
           </div>
-          <div className={classes.wskcptext}>
-            <div className="category">
-              <span>{product.name}</span>
-            </div>
-            <div className={classes.titleproduct}>
-              <h3>{product.name}</h3>
-            </div>
-            <div className={classes.descriptionprod}>
-              <p>{product.description}</p>
-            </div>
-            <div class="card-footer">
-              <div class="wcf-left"><span class="price">Rp500.000</span></div>
-              <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-      </div>
-      </div> */}
 
-</div>
+        </div>
+      </div>
+  </div>
 
 
     )})}
-
+</div>
 </div>
 
 
