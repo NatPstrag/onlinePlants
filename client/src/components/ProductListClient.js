@@ -48,19 +48,26 @@ return(
   <div className={classes.flipcard}>
     
       <div className={classes.flipcardinner}>
+        
         <div className={classes.flipcardfront}>
           
-         <img src={product.images} className={classes.image}/>
-         <div className={classes.cardoverlay}></div>
-                <div className={classes.cardcontent }>
-                   <h2>Description</h2>
-                    <p>{product.description}</p>
-              
-                    </div>
-          </div>
-
+          <img src={product.images} className={classes.image}/>
+            <div className={classes.cardoverlay}></div>
+              <div className={classes.cardcontent }>
+                  <h2>Description</h2>
+                  <p>{product.description}</p>
+              </div>
+               <div className={classes.t}>
+            <div className={classes.c}>
+              <span>{product.name}</span>
+            </div>
+            </div>
+            </div>
+            
         </div>
+        
       </div>
+      
   </div>
 
 
