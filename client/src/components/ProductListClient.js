@@ -8,8 +8,6 @@ import classes from './ProductListClient.module.css'
 
 
 
-
-
 const ProductListClient = (props) => {
 const{products, setProducts} = useContext(ProductsContext);
 
@@ -18,6 +16,8 @@ const{products, setProducts} = useContext(ProductsContext);
 const handleProductSelect = (productid) => {
   navigate(`/products/${productid}`)
 }
+
+
 
 useEffect(() => {
         const fetchData = async () => {
@@ -38,42 +38,42 @@ return(
 
 
 <div className = "container">
-      <div className={classes.wskcpproduct}> 
+  <div className={classes.element}>
+<div className={classes.wskcpproduct}> 
       {products && products.map((product) => {
     return(
-      <div 
+  <div 
       onClick={() => handleProductSelect(product.productid)} 
       key={product.productid}>
-
-  <div className={classes.flipcard}>
-    
+<div class="div2">
+    <div className={classes.flipcard}>
       <div className={classes.flipcardinner}>
-        
         <div className={classes.flipcardfront}>
+        <img src={product.images} className={classes.image}/>
+
         <div className={classes.t}>
-        
-          <img src={product.images} className={classes.image}/>
-              <div className={classes.c}>
-              <span>{product.name}</span>
-            </div>
-                </div>
-            <div className={classes.cardoverlay}></div>
-              <div className={classes.cardcontent }>
-                  <h2>Description</h2>
-                  <p>{product.description}</p>
-              </div>
-               
-            </div>
-        
-            
+          <div className={classes.c}>
+                <span>{product.name}</span>
+          </div>
         </div>
+       
         
+ 
+            
+            <div className={classes.cardoverlay}>
+            </div>
+            <div className={classes.cardcontent }>
+                <h2>Description</h2>
+                <p>{product.description}</p>
+            </div>
+
+        </div>
       </div>
-      
+    </div>
   </div>
-
-
-    )})}
+  </div>
+)})}
+</div>
 </div>
 </div>
 

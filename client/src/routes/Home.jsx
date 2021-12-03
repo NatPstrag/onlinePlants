@@ -1,7 +1,8 @@
 import React from "react";
+import { matchRoutes } from "react-router";
 
 import ProductListClient from "../components/ProductListClient";
-
+import classes from'./Home.module.css'
 
 
 
@@ -9,11 +10,15 @@ import ProductListClient from "../components/ProductListClient";
 
 const Home = () => {
     return (
+    
         <div>
+          <div className={classes.element}>
+
+            <div className={classes.shape}></div> 
           {/* <Header /> */}
-          Home
+       
           <ProductListClient />
- 
+ </div>
         </div>
     )
 }

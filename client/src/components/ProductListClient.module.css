@@ -1,11 +1,28 @@
  body {
   font-family: Arial, Helvetica, sans-serif;
+  justify-content: center;
+  align-items: center;
 
 }
 
+.element {   
+background: rgba(255, 255, 255, 1);
+border-radius: 26px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.7px);
+-webkit-backdrop-filter: blur(6.7px);
 
 
-/* Glassmorphism card effect */
+
+  width: 1300px; 
+  height: 1300px;
+padding-top: 0rem;
+padding-left: 3rem;
+
+
+
+} 
+
 
 
 .flipcard {
@@ -14,10 +31,8 @@
   height: 400px;
   perspective: 1000px;
   float:left;  
-  padding: 1rem;
-  
+  padding: 2rem;
 }
-
 .flipcardinner {
   position: relative;
   width: 100%;
@@ -27,8 +42,6 @@
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-
-
 .flipcardfront, .flipcardback {
   position: absolute;
   width: 100%;
@@ -37,14 +50,14 @@
   backface-visibility: hidden;
   
 }
-
 .flipcardfront {
-    /* From https://css.glass */
-background: rgba(39, 49, 42, 0.01);
+background: rgba(255, 250, 213, 0.66);
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5.1px);
--webkit-backdrop-filter: blur(5.1px);
+backdrop-filter: blur(10.9px);
+-webkit-backdrop-filter: blur(10.9px);
+
+
 border: 1px solid rgba(39, 49, 42, 0.18);
   position: relative;
   display: flex;
@@ -64,7 +77,21 @@ border: 1px solid rgba(39, 49, 42, 0.18);
     pointer-events: none;
 }
 
+
 .cardoverlay {
+background: rgba( 26, 36, 24, 0.95 );
+border-radius: 16px;
+box-shadow: 0 8px 32px  rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur(1rem);
+-webkit-backdrop-filter: blur(1rem);
+border: 5px rgba(250, 248, 248, 0.788) solid;
+border-left: 5px rgba(132, 155, 140, 0.61) solid;
+border-bottom: 5px rgba(10, 12, 10, 0.795) solid;
+border-right: 5px rgba(11, 20, 13, 0.712) solid;
+
+
+box-shadow: 0 2px 4px rgba(#000000, 0.2);
+
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -73,22 +100,10 @@ border: 1px solid rgba(39, 49, 42, 0.18);
   justify-content: center;
   width: 22px;
   height: 22px;
-
-   border-radius: 17px;
-    backdrop-filter: blur(20px);
-    background: rgba( 26, 36, 24, 0.95 );
-    box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px;
-    border: 5px rgba(250, 248, 248, 0.788) solid;
-      border-left: 5px rgba(132, 155, 140, 0.61) solid;
-    border-bottom: 5px rgba(10, 12, 10, 0.795) solid;
-    border-right: 5px rgba(11, 20, 13, 0.712) solid;
-
-    
-  box-shadow: 0 2px 4px rgba(#000000, 0.2);
   transition: 0.5s;
   cursor: pointer;
 }
-  
+
   .cardoverlay::before {
  
     font-size: 10px;
@@ -104,7 +119,7 @@ border: 1px solid rgba(39, 49, 42, 0.18);
     width: 100%;
     height: 100%;
     box-shadow: none;
-    border-radius: 0;
+    border-radius: 1rem;
     opacity: 0.9;
 
   }
@@ -185,8 +200,13 @@ backdrop-filter: blur(9.8px);
 
 .card{
   padding: 25px 0 5px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #000000;
 }
+
+.p{
+  font-size:18px;
+}
+
 .card:after, .card:before{
   content:'';
   display:table;
@@ -202,11 +222,6 @@ backdrop-filter: blur(9.8px);
 
 .card .r{
   float:right;
-}
-
-.price{
-  font-size:18px;
-  font-weight:bold;
 }
 
 a.buybtn{
