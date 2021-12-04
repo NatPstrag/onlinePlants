@@ -1,21 +1,21 @@
 
 body{
-   background-image: url(../img/back.png), url(../img/gradient.png);
 
- background-repeat: no-repeat; 
-background-color: #637660;
+
   font-family: "Sofia", sans-serif;
   font-size: 30px;
   color: antiquewhite;
- 
+ padding-top: 4rem;
+
 }
 .header{
 
 
     display: flex;
-   padding-top: 9rem; 
-height: 20rem;
-    background-image: url(../img/back.png);
+   padding-top: 8rem; 
+
+height: 25rem;
+    background-image: url(../img/lf1.jpg);
 
 
 }
