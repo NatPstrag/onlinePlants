@@ -2,8 +2,8 @@ CREATE DATABASE plant;
 
 CREATE TABLE products(
     productID SERIAL PRIMARY KEY,
-    name VARCHAR(20),
+    name VARCHAR(255),
     price INT ,
-    description VARCHAR(255),
-    images VARCHAR(255) 
+    description VARCHAR(1255),
+    images VARCHAR(1255) 
 )

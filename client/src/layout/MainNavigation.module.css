@@ -2,7 +2,7 @@
 body{
    background-image: url(../img/back.png), url(../img/gradient.png);
 
-  
+ background-repeat: no-repeat; 
 background-color: #637660;
   font-family: "Sofia", sans-serif;
   font-size: 30px;

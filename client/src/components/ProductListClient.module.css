@@ -12,14 +12,14 @@ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(8.3px);
 -webkit-backdrop-filter: blur(8.3px);
 border: 1px solid rgba(178, 170, 170, 0.3);
-/* From https://css.glass */
+
 
 
 
 
 
   width: 1300px; 
-  height: 1300px;
+  height: 2500px;
 padding-top: 0rem;
 padding-left: 3rem;
 
@@ -85,7 +85,7 @@ border: 1px solid rgba(39, 49, 42, 0.18);
 
 .cardoverlay {
 background: rgba( 26, 36, 24, 0.95 );
-border-radius: 16px;
+border-radius: 26px;
 box-shadow: 0 8px 32px  rgba( 31, 38, 135, 0.37 );
 backdrop-filter: blur(1rem);
 -webkit-backdrop-filter: blur(1rem);
@@ -93,11 +93,8 @@ border: 5px rgba(250, 248, 248, 0.788) solid;
 border-left: 5px rgba(132, 155, 140, 0.61) solid;
 border-bottom: 5px rgba(10, 12, 10, 0.795) solid;
 border-right: 5px rgba(11, 20, 13, 0.712) solid;
-
-
 box-shadow: 0 2px 4px rgba(#000000, 0.2);
-
-  position: absolute;
+ position: absolute;
   bottom: 10px;
   right: 10px;
   display: flex;
@@ -106,12 +103,12 @@ box-shadow: 0 2px 4px rgba(#000000, 0.2);
   width: 22px;
   height: 22px;
   transition: 0.5s;
-  cursor: pointer;
+  cursor: pointer; 
 }
 
   .cardoverlay::before {
  
-    font-size: 10px;
+    font-size: 5px;
     text-transform: uppercase;
     font-weight: 500;
     letter-spacing: 0.12em;
@@ -131,13 +128,14 @@ box-shadow: 0 2px 4px rgba(#000000, 0.2);
    
 .cardcontent {
   z-index: 1;
-  padding: 10px;
-  line-height: 1.4;
+  padding: 19px;
+  line-height: 1;
   opacity: 0;
   visibility: hidden;
   box-sizing: border-box;
   pointer-events: none;
   transition: 0s;
+  font-size: 14px;
   }
 
   .cardoverlay:hover ~ .cardcontent{
@@ -145,6 +143,9 @@ box-shadow: 0 2px 4px rgba(#000000, 0.2);
     visibility: visible;
     transition: 0.2s 0.3s;
   }
+
+
+
  .image {
    border-radius: 51% 49% 48% 52% / 75% 75% 25% 25%;
 height: 11rem;
@@ -160,20 +161,17 @@ object-fit:cover;
   transition: all 0.2s ease-in-out;
 } 
 
-
-
-
 .t .c{
   text-align:center;
   font-size:12px;
   font-weight:bold;
   padding:5px;
-  margin-bottom:45px;
+  margin-bottom:55px;
   transition: all 0.2s ease-in-out;
 }
 .t .c > *{
   position:absolute;
-  top:55%;
+  top:63%;
   left:50%;
   transform: translate(-50%,-50%);
   -webkit-transform: translate(-50%,-50%);
@@ -184,7 +182,7 @@ object-fit:cover;
     
 }
 .t .c> span{
-  padding: 12px 30px;
+  padding: 3px 70px;
   border: 1px solid #313131;
   background: rgba(61,74,70,0.9);
 -webkit-backdrop-filter: blur(1px);
