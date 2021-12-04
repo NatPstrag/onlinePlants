@@ -55,18 +55,16 @@ return(
           <div className={classes.c}>
                 <span>{product.name}</span>
           </div>
-        </div>
-       
-        
- 
-            
-            <div className={classes.cardoverlay}>
-            </div>
+      
+     <div className={classes.line}></div>
+          </div>
+
+
+          <div className={classes.cardoverlay}></div>
             <div className={classes.cardcontent }>
                 <h2>Description</h2>
                 <p>{product.description}</p>
             </div>
-
         </div>
       </div>
     </div>

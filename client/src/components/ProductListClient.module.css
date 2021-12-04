@@ -14,6 +14,8 @@ backdrop-filter: blur(11px);
 -webkit-backdrop-filter: blur(11px);
 
 margin-top: 10rem;
+margin-left: auto;
+margin-right: 50%;
 
 
 
@@ -129,14 +131,15 @@ box-shadow: 0 2px 4px rgba(#000000, 0.2);
    
 .cardcontent {
   z-index: 1;
-  padding: 19px;
+  padding: 39px;
   line-height: 1;
   opacity: 0;
-  visibility: hidden;
+  margin-left: 0.1rem;
   box-sizing: border-box;
   pointer-events: none;
   transition: 0s;
   font-size: 14px;
+  width: 14rem;
   }
 
   .cardoverlay:hover ~ .cardcontent{
@@ -202,31 +205,16 @@ backdrop-filter: blur(9.8px);
   
 }
 
-.card{
+.line{
   padding: 25px 0 5px;
-  border-top: 1px solid #000000;
+  border-top: 1px solid #131212ad;
+  margin-left: 4rem;
 }
 
-.p{
+.price{
   font-size:18px;
 }
 
-.card:after, .card:before{
-  content:'';
-  display:table;
-}
-.card:after{
-  clear:both;
-}
-
-.card .l{
-  float:left;
-  
-}
-
-.card .r{
-  float:right;
-}
 
 a.buybtn{
   display:block;
